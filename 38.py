@@ -1,5 +1,5 @@
 '''
-#BOJ 10886 0=not cute / 1=cute
+#BOJ 10102 개표
 
 [문제설명]
 
@@ -11,18 +11,13 @@
 
 n = int(input())
 
-cnt0 = 0
-cnt1 = 0
+score = input()
+a = score.count('A')
+b = score.count('B')
 
-for i in range(n):
-    a = int(input())
-
-    if a == 0:
-        cnt0 = cnt0 + 1
-    else:
-        cnt1 = cnt1 + 1
-
-if cnt0>cnt1:
-    print("Junhee is not cute!")
+if a>b:
+    print('A')
+elif a<b:
+    print('B')
 else:
-    print("Junhee is cute!")
+    print('Tie')

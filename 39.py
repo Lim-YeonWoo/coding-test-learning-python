@@ -1,5 +1,5 @@
 '''
-#BOJ 10988 팰린드롬인지 확인하기
+#BOJ 10886 0=not cute / 1=cute
 
 [문제설명]
 
@@ -9,14 +9,20 @@
 
 '''
 
-word = input()
-isPalindrome = True
+n = int(input())
 
-for i in range(len(word)):
-    if word[i] != word[len(word)-i-1]:
-        isPalindrome=False
+cnt0 = 0
+cnt1 = 0
 
-if isPalindrome:
-    print("1")
+for i in range(n):
+    a = int(input())
+
+    if a == 0:
+        cnt0 = cnt0 + 1
+    else:
+        cnt1 = cnt1 + 1
+
+if cnt0>cnt1:
+    print("Junhee is not cute!")
 else:
-    print("0")
+    print("Junhee is cute!")

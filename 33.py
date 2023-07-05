@@ -1,23 +1,30 @@
 '''
-#BOJ 2754 학점계산
+#BOJ 2476 주사위 게임
 
 [문제설명]
 
 [문제풀이]
 
 [어려웠던 점 & 다시 공부할 부분]
-    if, elif 여러개로 풀까 생각했는데
-    이런걸 dictionary 자료구조를 이용하면 편한 것 같다.
+
 '''
 
-score_dict = {
-    'A+': 4.3, 'A0': 4.0, 'A-': 3.7,
-    'B+': 3.3, 'B0': 3.0, 'B-': 2.7,
-    'C+': 2.3, 'C0': 2.0, 'C-': 1.7,
-    'D+': 1.3, 'D0': 1.0, 'D-': 0.7,
-    'F': 0.0
-}
+n = int(input())
 
-score = input()
+score = []
 
-print(score_dict[score])
+for i in range(n):
+    a, b, c = map(int, input().split())
+
+    if a==b and b==c:
+        score.append(10000 + a*1000)
+    elif a==b:
+        score.append(1000 + a * 100)
+    elif b==c:
+        score.append(1000 + b * 100)
+    elif a==c:
+        score.append(1000 + c * 100)
+    else:
+        score.append(max(a,b,c)*100)
+
+print(max(score))

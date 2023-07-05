@@ -1,5 +1,5 @@
 '''
-#BOJ 5086 배수와 약수
+#BOJ 10988 팰린드롬인지 확인하기
 
 [문제설명]
 
@@ -9,15 +9,14 @@
 
 '''
 
-while True:
-    a, b = map(int, input().split())
+word = input()
+isPalindrome = True
 
-    if a==0 and b==0:
-        break
+for i in range(len(word)):
+    if word[i] != word[len(word)-i-1]:
+        isPalindrome=False
 
-    if a%b==0:
-        print("multiple")
-    elif b%a==0:
-        print("factor")
-    else:
-        print("neither")
+if isPalindrome:
+    print("1")
+else:
+    print("0")

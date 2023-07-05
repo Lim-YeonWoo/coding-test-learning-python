@@ -1,5 +1,5 @@
 '''
-#BOJ 10102 개표
+#BOJ 5063 TGN
 
 [문제설명]
 
@@ -9,15 +9,14 @@
 
 '''
 
-n = int(input())
+T = int(input())
 
-score = input()
-a = score.count('A')
-b = score.count('B')
+for t in range(T):
+    r, e, c = map(int, input().split())
 
-if a>b:
-    print('A')
-elif a<b:
-    print('B')
-else:
-    print('Tie')
+    if r < (e-c):
+        print("advertise")
+    elif r==(e-c):
+        print("does not matter")
+    else:
+        print("do not advertise")

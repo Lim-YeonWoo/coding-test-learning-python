@@ -1,5 +1,5 @@
 '''
-#BOJ 5063 TGN
+#BOJ 7567 그릇
 
 [문제설명]
 
@@ -9,14 +9,17 @@
 
 '''
 
-T = int(input())
+bowl = input()
 
-for t in range(T):
-    r, e, c = map(int, input().split())
-
-    if r < (e-c):
-        print("advertise")
-    elif r==(e-c):
-        print("does not matter")
+for i in range(len(bowl)):
+    if i==0:
+        cnt = 10 #cnt갱신
+        before = bowl[i] #before갱신
     else:
-        print("do not advertise")
+        if before == bowl[i]:
+            cnt = cnt + 5 #cnt갱신
+            before = bowl[i]  # before갱신
+        else:
+            cnt = cnt + 10 #cnt갱신
+            before = bowl[i] #before갱신
+print(cnt)
